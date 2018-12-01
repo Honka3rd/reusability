@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Faker from 'faker';
+import Comment from './Coment';
+import Approve from "./Approve";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="ui cards">
+        <Approve>
+          <Comment img={Faker.image.avatar()} name={Faker.name.firstName()} time="6:00 pm"content={Faker.lorem.words()}/>
+        </Approve>
+        <br/>
+        <Approve>
+          <Comment img={Faker.image.avatar()} name={Faker.name.firstName()} time="7:00 pm"content={Faker.lorem.words()}/>
+        </Approve>
       </div>
     );
   }
